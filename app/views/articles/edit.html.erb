@@ -1,22 +1,22 @@
-<h2>New Article</h2>
+<h1>Edit Article</h1>
 <%= link_to "About", welcome_about_path %>
 <%= link_to "Home", root_path %>
 <br/>
-  <% if @article.errors.any? %>
+<% if @article.errors.any? %>
     <% @article.errors.full_messages.each do |msg| %>
         <p><%= msg %></p>
     <% end %>
-  <% end %>
+<% end %>
 <br/>
 <%= form_for @article do |f|  %>
-  <p>
-    <%= f.label :title %><br/>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br/>
-    <%= f.text_area :description %>
-  </p>
+    <p>
+      <%= f.label :title %><br/>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :description %><br/>
+      <%= f.text_area :description %>
+    </p>
     <%= f.submit %>
 
 <% end %>
