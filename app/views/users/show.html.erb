@@ -1,0 +1,36 @@
+<h1>Show user</h1>
+<%= gravatar_for @user %>
+<br/>
+<%= @user.username %>
+<br/>
+<h2>
+<%= @user.username %>'s Artices
+</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>actions</th>
+  </tr>
+  <% @articles.each do |a| %>
+      <tr>
+        <td><%= a.title %></td>
+        <td>
+          <%= a.description %>
+          <br/>
+          <small>Created by :
+            <%= a.user.username if a.user %>,
+            Created at : <%= time_ago_in_words(a.created_at) %> ago ,
+            Updated at : <%= time_ago_in_words(a.updated_at) %> ago
+          </small>
+        </td>
+        <td>
+          <%= link_to "edit", edit_article_path(a) %>
+          <%= link_to "show", article_path(a) %>
+          <%= link_to "deleted", article_path(a), method: :delete, data: {confirm: "Are you sure?"} %>
+        </td>
+      </tr>
+  <% end %>
+
+</table>
