@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    debugger
+    # debugger
     #to values sent by form
     #render plain: params[:article].inspect
     @article = Article.new(article_params)
