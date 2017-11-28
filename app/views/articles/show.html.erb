@@ -1,5 +1,10 @@
 <h1>Showing selected article</h1>
 
+
+<p><%=  link_to gravatar_for(@user), user_path(@user) %></p>
+<p><%= @user.email %></p>
+<p><%= link_to @user.username , user_path(@user) %></p>
+
 <p>Title : <%= @article.title %></p>
 <p>Description : <%= @article.description %></p>
 <br/>
