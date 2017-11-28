@@ -1,25 +1,2 @@
 
-<% if @user.errors.any? %>
-    <% @user.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-    <% end %>
-<% end %>
-<br/>
-<%= form_for @user do |f|  %>
-    <p>
-      <%= f.label :username %><br/>
-      <%= f.text_field :username %>
-    </p>
-    <p>
-      <%= f.label :email %><br/>
-      <%= f.text_field :email %>
-    </p>
-    <p>
-      <%= f.label :password %><br/>
-      <%= f.text_field :password %>
-    </p>
-    <%= f.submit "Sign up" %>
-
-<% end %>
-<%= link_to "Back" , root_path %>
-<br/>
+<%= render 'form' %>

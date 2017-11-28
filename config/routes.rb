@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "welcome/index", to: "welcome#index"
   get "welcome/about", to: "welcome#about"
 
+  resources :users
   root "welcome#index"
 
   get 'signup', to: "users#new"
